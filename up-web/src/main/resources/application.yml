@@ -1,0 +1,36 @@
+spring:
+  mvc:
+    servlet:
+      path: /
+      load-on-startup: 1
+    view:
+      prefix: /
+      suffix: .jsp
+
+  jta:
+    bitronix:
+      datasource:
+        enable-jdbc4-connection-test: 
+          
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    #    url: jdbc:mysql://139.196.191.83:3306/CC?servcerTimezone=GMT
+#    #    username: test01
+#    #    password: Test01123
+#    url: jdbc:mysql://139.196.191.83:3306/TCC?servcerTimezone=GMT
+#    username: test02
+#    password: Test02123
+
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+test: 
+  testData: 
+    userCode: admin
+    password: 11
+
+logging:
+  config: classpath:logback-test.xml

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网盘demo</title>
+
+    <script language="javascript" src="../core/jquery-1.7.1.min.js"></script>
+    <!-- jquery file upload相关js -->
+    <script src="../core/jquery.ui.widget.js"></script>
+    <script src="../core/jquery.iframe-transport.js"></script>
+    <script src="../core/jquery.fileupload.js"></script>
+    <script src="../core/jquery.fileupload-process.js"></script>
+    <script src="../core/jquery.fileupload-validate.js"></script>
+    
+    <script language="javascript" src="file/FileInfo.js"></script>
+    <script language="javascript" src="Index.js"></script>
+    <!--<script type="text/javascript" src="../test/handlebars.min-v4.7.7.js"></script>-->
+    <!--<script type="text/javascript" src="../test/require.js"></script>-->
+    <!--<script id="fileInfoTpl" type="text/x-handlebars-template">-->
+        <!--<div class="form-item">-->
+            <!--<a id="fileId" class="reg" >{{fileName}}</a>-->
+            <!--<button id="delFileId" onclick="deleteFile({{fileId}})">delete</button>-->
+            <!--<button id="downFileId" onclick="downloadFile(12)">download</button>-->
+        <!--</div>-->
+    <!--</script>-->
+
+    <link rel="stylesheet" type="text/css" href="css/IndexStyle.css">
+</head>
+<body>
+
+<div class="js-banner">
+    <h1>首页</h1>
+    <h2>  欢迎使用  </h2>
+</div>
+
+<div class="js-content">
+    
+    <div class="js-userInfo">
+        <div class="js-userImg">
+            <a>头像在这里</a>
+        </div>
+        <div class="js-userInfoDetail">
+            <a id="js-user-name" class="js-user-info-reg">用户1</a>
+            
+        </div>
+    </div>
+    <div class="js-file">
+        <div class="js-fileBar">
+            <div id="js-myfile-title" class="js-text1">我的文件</div>
+            <div id="js-fileBar-buttonList">
+                <button class="js-button-1" type="button" onclick="queryPathFile(0)">查询</button>
+
+                <button class="js-button-1" id="fileDownTest" onclick="downloadFile(11)">测试下载</button>
+
+                <button class="js-button-1" id="createFileFolder" onclick="createFolder()">新建文件夹</button>
+
+                <button class="js-button-1" id="fileuploadBtn" type="button" onclick="uploadFile()">上传文件</button>
+            </div>
+            <div id="js-file-path" class="js-filepath">
+                <a id="js-nowPath-id" class="js-reg-1" style="display: none" >0</a>
+                <a id="path_0" class="js-reg-path" onclick="queryPathFile(0)" >我的文件</a>
+                <a> / </a>
+            </div>
+        </div>
+        <div class="js-fileList">
+            <div id="fileInfo" class="js-filebok">
+                <div class="js-file-item">
+                    <a id="file_12" class="js-reg-1" >文件12.txt</a>
+                    <button id="fileBtn_12" class="js-button-del" onclick="deleteFile(22)">delete</button>
+                    <button id="fileDown_12" class="js-button-down" onclick="downloadFile(22)">download</button>
+                </div>
+                <div class="js-file-item">
+                    <a id="file_11" class="js-reg-1" >文件11.txt</a>
+                    <button id="fileBtn_11" class="js-button-del" onclick="deleteFile(11)">delete</button>
+                    <button id="fileDown_11" class="js-button-down" onclick="downloadFile(11)">download</button>
+                </div>
+                <div class="js-folder-item">
+                    <a id="file_13" class="js-reg-folder" onclick="queryFile(13)">文件夹13</a>
+                    <button id="fileBtn_13" class="js-button-del" onclick="deleteFile(13)">delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="js-fileUpload" id="js-fileupload-div">
+            <div class="js-text1">文件上传</div>
+            <div class="js-upload-item">
+                <input id="uploadData" type="file" name="uploadData" multiple style="display: none" />
+                <button id="chooseFile">+选择文件</button>
+                <button id="uploadFile">~开始上传</button>
+                <button id="rechooseFile">+重新选择</button>
+            </div>
+            <div>
+                <iframe id="ifr" width="100%" height="95%"></iframe>
+            </div>
+            <div>
+                <a id="file_choose" class="js-reg-1" ></a>
+            </div>
+            <div id="js-progress">
+                <div class="js-bar" style="width: 0%;"></div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>
