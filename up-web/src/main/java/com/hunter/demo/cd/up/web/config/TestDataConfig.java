@@ -31,7 +31,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class TestDataConfig {
-    
+    //test
     @Bean(name = "test")
     @ConfigurationProperties("test")
     public Test test() {
